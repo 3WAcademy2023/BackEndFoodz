@@ -15,7 +15,12 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 
-console.log('Khalil conflict')
+
+
+
+console.log('3wacademy2023')
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
