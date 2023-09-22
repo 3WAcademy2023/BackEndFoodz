@@ -4,7 +4,7 @@ import bodyparser from 'body-parser'
 import connectDB from './server.js'
 import cookieParser from 'cookie-parser';
 
-
+//bonjour
 
 const app = express();
 const PORT = 9000;
@@ -15,6 +15,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 
+console.log('Khalil conflict')
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
