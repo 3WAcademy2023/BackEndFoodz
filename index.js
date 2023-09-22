@@ -1,3 +1,4 @@
+
 import express from 'express'
 import bodyparser from 'body-parser'
 import connectDB from './server.js'
@@ -27,7 +28,4 @@ app.listen(PORT, () => {
 connectDB()
 app.use(cookieParser());
 app.use(express.static('public'))
-// app.use(ArticleRouter)
-// app.use(CategoryRouter)
-// app.use(CommentsRoute)
-// app.use(UserRouter)
+
