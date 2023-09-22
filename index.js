@@ -1,36 +1,31 @@
-//require express
+
 import express from 'express'
-//require cors
-import cors from 'cors'
-//require connectDB
-import connectDB from './config/connectDB.js'
+import bodyparser from 'body-parser'
+import connectDB from './server.js'
+import cookieParser from 'cookie-parser';
 
 
 
-//init express 
-const app = express() 
+const app = express();
+const PORT = 9000;
 
-//Middleware 
-app.use(express.json())
-
-//cors 
-app.use(cors())
-app.options('*', cors())
-
-//connectDB
-connectDB(); 
-
-//routes
-app.use('/api/auth',authRouter)
-
-app.use("/api", foodRouter);
+app.use(bodyparser.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+//configuration de dossier views
+app.set("views", "views");
 
 
-//create port 
-const port = process.env.PORT || 5000 
-//launch the server
-app.listen(port,(error) => 
-error 
-? console.log(error) 
-:console.log(`Server is running on port ${port}`)
-)
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+
+
+
+
+
+
+connectDB()
+app.use(cookieParser());
+app.use(express.static('public'))
+
